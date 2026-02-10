@@ -12,12 +12,11 @@ O sistema simula um banco de dados via JSON, gerencia estado com LocalStorage e 
 
 | Home (Carrossel) | Detalhes do Produto |
 |:---:|:---:|
-| ![Home](<img width="1851" height="918" alt="image" src="https://github.com/user-attachments/assets/38ec4d5c-bb0e-4ce8-8fcd-dca47dee43d9" />) | ![Detalhes](<img width="1850" height="912" alt="image" src="https://github.com/user-attachments/assets/3d3b2b0a-10a1-4dd9-a40a-a4fffac306df" />
-) |
+|<img width="1851" height="918" alt="image" src="https://github.com/user-attachments/assets/38ec4d5c-bb0e-4ce8-8fcd-dca47dee43d9" /> | <img width="1850" height="912" alt="image" src="https://github.com/user-attachments/assets/3d3b2b0a-10a1-4dd9-a40a-a4fffac306df" />|
 
 | Carrinho (Offcanvas) | Checkout & Email |
 |:---:|:---:|
-| ![Carrinho](<img width="1842" height="883" alt="image" src="https://github.com/user-attachments/assets/e36dc86c-b5aa-4e36-aaf7-01f6730bacd1" />) | ![Checkout](<img width="1835" height="884" alt="image" src="https://github.com/user-attachments/assets/cc75dd21-83ac-4392-a0f6-2124d622028c" />) |
+|<img width="1842" height="883" alt="image" src="https://github.com/user-attachments/assets/e36dc86c-b5aa-4e36-aaf7-01f6730bacd1" /> |<img width="1835" height="884" alt="image" src="https://github.com/user-attachments/assets/cc75dd21-83ac-4392-a0f6-2124d622028c" /> |
 
 ---
 
@@ -53,25 +52,6 @@ O sistema simula um banco de dados via JSON, gerencia estado com LocalStorage e 
 
 ---
 
-## 📂 Estrutura do Projeto
-
-/
-├── index.html        # Página Inicial
-├── produtos.html     # Listagem completa
-├── detalhes.html     # Página do Produto (URL Params)
-├── checkout.html     # Finalização de Compra
-├── login.html        # Autenticação (Simulada)
-├── style.css         # Estilização Global
-└── JS/
-├── produtos.js   # "Banco de Dados" JSON e Renderização
-├── carrinho.js   # Lógica do Carrinho e LocalStorage
-├── checkout.js   # Validações e Integração EmailJS
-├── detalhes.js   # Lógica da página de detalhes
-├── index.js      # Lógica específica da Home
-└── navbar.js     # Componente de menu dinâmico
-
----
-
 ## 🚀 Como Executar o Projeto
 
 1. **Clone o repositório:**
@@ -79,19 +59,20 @@ O sistema simula um banco de dados via JSON, gerencia estado com LocalStorage e 
    git clone [https://github.com/LucasVidalFilho/CRUD-loja.git](https://github.com/LucasVidalFilho/CRUD-loja.git)
 
    Abra o projeto:
-2. Navegue até a pasta e abra o arquivo index.html no seu navegador.
+**2. Navegue até a pasta e abra o arquivo index.html no seu navegador.**
 
-Dica: Para uma melhor experiência, utilize a extensão Live Server do VS Code.
+    Dica: Para uma melhor experiência, utilize a extensão Live Server do VS Code.
 
-3. Configuração do EmailJS (Opcional):
-Para que o envio de e-mails funcione no seu clone local, você precisará de suas próprias chaves de API.
+**3. Configuração do EmailJS (Opcional):**
+  Para que o envio de e-mails funcione no seu clone local, você precisará de suas próprias chaves de API.
 
-Crie uma conta no EmailJS.
+  Crie uma conta no EmailJS.
 
-Substitua a PUBLIC_KEY no arquivo checkout.html.
+  Substitua a PUBLIC_KEY no arquivo checkout.html.
 
-Substitua o SERVICE_ID e TEMPLATE_ID no arquivo JS/checkout.js.
+  Substitua o SERVICE_ID e TEMPLATE_ID no arquivo JS/checkout.js.
 
+  
 👨‍💻 Autor
 Desenvolvido por [Lucas Vidal].
 
