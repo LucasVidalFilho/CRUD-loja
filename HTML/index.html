@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja CRUD Virtual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/produtos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+
+<body>
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Loja CRUD 🛒</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" id="linkLogin" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- MAIN -->
+    <main class="container my-5">
+        <h1>Bem-vindo à Loja</h1>
+        <p>Este é o esqueleto base do seu projeto.</p>
+    </main>
+
+<!-- Carrosel Produtos -->
+    
+<section class="container my-5 position-relative">
+    <h2 class="mb-3">Destaques da Semana</h2>
+
+    <button class="btn-scroll btn-scroll-left" onclick="scrollar('esquerda')">❮</button>
+
+    <div id="listaProdutos" class="scroll-horizontal">
+        
+    
+    </div>
+
+    <button class="btn-scroll btn-scroll-right" onclick="scrollar('direita')">❯</button>
+</section>
+
+
+<!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 Loja CRUD Virtual - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+<!-- carrinho -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrinho" aria-labelledby="offcanvasCarrinhoLabel">
+        <div class="offcanvas-header bg-dark">
+            <h5 class="offcanvas-title bg-dark text-white" id="offcanvasCarrinhoLabel">Meu Carrinho 🛒</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    
+        <div class="offcanvas-body d-flex flex-column">
+        <div id="listaCarrinho" class="flex-grow-1 overflow-auto">
+            <p class="text-center text-muted mt-5">Seu carrinho está vazio.</p>
+        </div>
+
+         <div class="border-top pt-3 mt-3">
+             <div class="d-flex justify-content-between mb-3">
+                    <span class="fw-bold">Total:</span>
+                    <span class="fw-bold text-primary fs-5" id="totalCarrinho">R$ 0,00</span>
+                </div>
+                <button class="btn btn-success w-100 btn-lg" onclick="finalizarCompra()">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/index.js"></script>
+    <script src="../JS/produtos.js"></script>
+    <script src="../JS/carrinho.js"></script>
+</body>
+</html>

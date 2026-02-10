@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - Loja CRUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/detalhes.css">
+    
+</head>
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Loja CRUD 🛒</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Voltar</a></li>
+                    <li class="nav-item"><a class="nav-link" id="linkLogin" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="card shadow-sm border-0">
+            <div class="row g-0">
+                
+                <div class="col-md-7 p-4 d-flex align-items-center justify-content-center bg-white">
+                    <img id="imgProduto" src="" alt="Imagem do produto" class="img-fluid" style="max-height: 500px;">
+                </div>
+
+                <div class="col-md-5 p-4 border-start">
+                    <small id="catProduto" class="text-muted text-uppercase fw-bold mb-2 d-block">Categoria</small>
+                    
+                    <h1 id="nomeProduto" class="fw-bold mb-3" style="font-size: 1.8rem;">Nome do Produto</h1>
+                    
+                    <div id="avaliacaoProduto" class="mb-3 text-warning">
+                        </div>
+
+                    <div class="mb-4">
+                        <span id="precoAntigo" class="text-decoration-line-through text-muted d-block small"></span>
+                        <div class="d-flex align-items-center gap-2">
+                            <span id="precoAtual" class="fs-1 fw-light text-dark">R$ 0,00</span>
+                            <span id="descontoProduto" class="badge bg-success">0% OFF</span>
+                        </div>
+                        <p class="text-success fw-bold mt-1" id="freteTexto">Ver condições de frete</p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button id="btnComprarAgora" class="btn btn-primary btn-lg">Comprar Agora</button>
+                         <button id="btnAdicionarCarrinho" class="btn btn-outline-primary btn-lg">Adicionar ao Carrinho</button>
+                    </div>
+
+                        <hr class="my-4">
+
+                    <div class="card bg-light border-0 p-3">
+                        <label class="fw-bold mb-2"><i class="bi bi-truck"></i> Calcular Frete e Prazo</label>
+                        <div class="input-group mb-3">
+                            <input type="text" id="inputCep" class="form-control" placeholder="00000-000" maxlength="9">
+                            <button class="btn btn-outline-secondary bg-white" type="button" onclick="calcularFrete()">OK</button>
+                        </div>
+                        
+                        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" class="small text-decoration-none text-muted mb-3 d-block">
+                            Não sei meu CEP
+                        </a>
+                    
+                        <div id="resultadoFrete" class="d-none">
+                            <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
+                                <div>
+                                    <span class="fw-bold d-block">Sedex</span>
+                                    <small class="text-muted" id="prazoSedex">Chega em x dias</small>
+                                </div>
+                                <div class="text-primary fw-bold" id="precoSedex">R$ 00,00</div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold d-block">PAC (Normal)</span>
+                                    <small class="text-muted" id="prazoPac">Chega em x dias</small>
+                                </div>
+                                <div class="text-primary fw-bold" id="precoPac">R$ 00,00</div>
+                            </div>
+                            
+                            <div class="mt-3 small text-muted bg-white p-2 rounded border">
+                                Entregar em: <span id="enderecoDestino">...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h5 class="fw-bold">Sobre este item</h5>
+                        <p id="descProduto" class="text-muted">
+                            Descrição detalhada do produto carregada dinamicamente.
+                        </p>
+                    </div>
+
+                    <table class="table table-sm mt-3">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="w-50">Código</th>
+                                <td id="codProduto">#000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Estoque</th>
+                                <td id="estoqueProduto">Disponível</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- carrinho -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrinho" aria-labelledby="offcanvasCarrinhoLabel">
+        <div class="offcanvas-header bg-dark">
+            <h5 class="offcanvas-title bg-dark text-white" id="offcanvasCarrinhoLabel">Meu Carrinho 🛒</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    
+        <div class="offcanvas-body d-flex flex-column">
+        <div id="listaCarrinho" class="flex-grow-1 overflow-auto">
+            <p class="text-center text-muted mt-5">Seu carrinho está vazio.</p>
+        </div>
+
+         <div class="border-top pt-3 mt-3">
+             <div class="d-flex justify-content-between mb-3">
+                    <span class="fw-bold">Total:</span>
+                    <span class="fw-bold text-primary fs-5" id="totalCarrinho">R$ 0,00</span>
+                </div>
+                <button class="btn btn-success w-100 btn-lg" onclick="finalizarCompra()">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/produtos.js"></script>
+    <script src="../JS/detalhes.js"></script>
+    <script src="../JS/carrinho.js"></script>
+</body>
+</html>

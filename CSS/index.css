@@ -1,0 +1,59 @@
+.scroll-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 15px;
+    padding: 10px 5px;  
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+    display: none;
+}
+
+.card-produto {
+    min-width: 280px; /* Garante que não encolha */
+    width: 100%;
+    position: center;
+}
+
+/* Botões Flutuantes (< e >) */
+.btn-scroll {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 10; 
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-scroll:hover {
+    background-color: black;
+}
+
+
+.btn-scroll-left {
+    left: 0;
+}
+
+.btn-scroll-right {
+    right: 0;
+}
+
+.card-img-top{
+    height: 200px;
+    width: 100%;    
+    object-fit: contain;
+
+}
+
